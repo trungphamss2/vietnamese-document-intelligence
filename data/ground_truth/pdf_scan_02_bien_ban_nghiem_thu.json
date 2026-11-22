@@ -1,0 +1,37 @@
+{
+  "filename": "pdf_scan_02_bien_ban_nghiem_thu.pdf",
+  "document_type": "handover_acceptance_record",
+  "contract_reference": "102/2026/HĐDV-AI",
+  "date": "2026-11-16",
+  "party_a": "CÔNG TY CỔ PHẦN CÔNG NGHỆ ALPHA VIỆT NAM",
+  "party_b": "CÔNG TY TNHH GIẢI PHÁP DỮ LIỆU THÔNG MINH VIỆT",
+  "milestone": "Milestone 01: Document Processing Pipeline & REST API",
+  "evaluation_criteria": [
+    {
+      "item": "Module trích xuất PDF (PyMuPDF)",
+      "result": "ĐẠT (100%)"
+    },
+    {
+      "item": "Module trích xuất DOCX (python-docx)",
+      "result": "ĐẠT (100%)"
+    },
+    {
+      "item": "Module trích xuất XLSX (openpyxl)",
+      "result": "ĐẠT (100%)"
+    },
+    {
+      "item": "Hệ thống REST API (FastAPI)",
+      "result": "ĐẠT (100%)"
+    },
+    {
+      "item": "Bộ kiểm thử tự động (pytest)",
+      "result": "ĐẠT (100%)"
+    },
+    {
+      "item": "Tài liệu kỹ thuật & Hướng dẫn (README)",
+      "result": "ĐẠT (100%)"
+    }
+  ],
+  "conclusion": "Toàn bộ các hạng mục công việc Milestone 01 đã được nghiệm thu đạt 100%.",
+  "raw_ground_truth_text": "CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM\nĐộc lập ­ Tự do ­ Hạnh phúc\n­­­­­­­­­­***­­­­­­­­­­\nBIÊN BẢN NGHIỆM THU VÀ BÀN GIAO SẢN PHẨM\nDự án: Nền tảng Document Intelligence & Pipeline Trích xuất Dữ liệu\n­ Căn cứ Hợp đồng dịch vụ công nghệ số 102/2026/HĐDV­AI ký ngày 16/11/2026;\n­ Căn cứ kết quả kiểm thử hệ thống tự động và biên bản kiểm thử kỹ thuật nội bộ.\nHôm nay, ngày 16 tháng 11 năm 2026, tại trụ sở Bên A, chúng tôi tiến hành nghiệm thu gồm:\nBÊN GIAO (BÊN B): CÔNG TY TNHH GIẢI PHÁP DỮ LIỆU THÔNG MINH VIỆT\n­ Đại diện: Bà Lê Thị Mai ­ Chức vụ: Giám đốc Điều hành\n­ Cán bộ kỹ thuật: Ông Phạm Hoàng Long ­ Trưởng nhóm Kiến trúc sư AI\nBÊN NHẬN (BÊN A): CÔNG TY CỔ PHẦN CÔNG NGHỆ ALPHA VIỆT NAM\n­ Đại diện: Ông Nguyễn Văn Nam ­ Chức vụ: Tổng Giám đốc\n­ Cán bộ phụ trách: Ông Đỗ Minh Tuấn ­ Trưởng phòng Công nghệ thông tin\nSau khi rà soát và kiểm tra thực tế, hai bên thống nhất các nội dung nghiệm thu sau:\nSTT\nHạng mục bàn giao\nTiêu chuẩn kỹ thuật\nKết quả nghiệm thu\n1\nModule trích xuất PDF (PyMuPDF)\nTrích xuất từng trang, cờ OCR\nĐẠT (100%)\n2\nModule trích xuất DOCX (python­docx)\nĐẠT (100%)\n3\nModule trích xuất XLSX (openpyxl)\nĐẠT (100%)\n4\nHệ thống REST API (FastAPI)\nĐẠT (100%)\n5\nBộ kiểm thử tự động (pytest)\n25/25 test cases passed\nĐẠT (100%)\n6\nTài liệu kỹ thuật & Hướng dẫn (README)\nĐẠT (100%)\nKẾT LUẬN CỦA HỘI ĐỒNG NGHIỆM THU:\n1. Toàn bộ các hạng mục công việc Milestone 01 đã được Bên B triển khai đầy đủ, đúng tiến độ và đạt tất cả các yêu\ncầu kỹ thuật quy định trong Hợp đồng số 102/2026/HĐDV­AI.\n2. Bên A chính thức tiếp nhận hệ thống mã nguồn, bộ tài liệu và đồng ý thanh toán đợt 2 cho Bên B.\nBiên bản được lập thành 04 bản gốc có giá trị như nhau, mỗi bên giữ 02 bản để lưu trữ.\nĐẠI DIỆN BÊN GIAO (BÊN B)\n(Ký và đóng dấu)\nĐẠI DIỆN BÊN NHẬN (BÊN A)\n(Ký và đóng dấu)\nLê Thị Mai\nNguyễn Văn Nam\nALPHA CORP\nĐÃ DUYỆT"
+}

@@ -1,0 +1,52 @@
+CỘNG HÒA XÃ HỘI CHỦ NGHĨA VIỆT NAM
+Độc lập ­ Tự do ­ Hạnh phúc
+­­­­­­­­­­***­­­­­­­­­­
+BIÊN BẢN NGHIỆM THU VÀ BÀN GIAO SẢN PHẨM
+Dự án: Nền tảng Document Intelligence & Pipeline Trích xuất Dữ liệu
+­ Căn cứ Hợp đồng dịch vụ công nghệ số 102/2026/HĐDV­AI ký ngày 16/11/2026;
+­ Căn cứ kết quả kiểm thử hệ thống tự động và biên bản kiểm thử kỹ thuật nội bộ.
+Hôm nay, ngày 16 tháng 11 năm 2026, tại trụ sở Bên A, chúng tôi tiến hành nghiệm thu gồm:
+BÊN GIAO (BÊN B): CÔNG TY TNHH GIẢI PHÁP DỮ LIỆU THÔNG MINH VIỆT
+­ Đại diện: Bà Lê Thị Mai ­ Chức vụ: Giám đốc Điều hành
+­ Cán bộ kỹ thuật: Ông Phạm Hoàng Long ­ Trưởng nhóm Kiến trúc sư AI
+BÊN NHẬN (BÊN A): CÔNG TY CỔ PHẦN CÔNG NGHỆ ALPHA VIỆT NAM
+­ Đại diện: Ông Nguyễn Văn Nam ­ Chức vụ: Tổng Giám đốc
+­ Cán bộ phụ trách: Ông Đỗ Minh Tuấn ­ Trưởng phòng Công nghệ thông tin
+Sau khi rà soát và kiểm tra thực tế, hai bên thống nhất các nội dung nghiệm thu sau:
+STT
+Hạng mục bàn giao
+Tiêu chuẩn kỹ thuật
+Kết quả nghiệm thu
+1
+Module trích xuất PDF (PyMuPDF)
+Trích xuất từng trang, cờ OCR
+ĐẠT (100%)
+2
+Module trích xuất DOCX (python­docx)
+ĐẠT (100%)
+3
+Module trích xuất XLSX (openpyxl)
+ĐẠT (100%)
+4
+Hệ thống REST API (FastAPI)
+ĐẠT (100%)
+5
+Bộ kiểm thử tự động (pytest)
+25/25 test cases passed
+ĐẠT (100%)
+6
+Tài liệu kỹ thuật & Hướng dẫn (README)
+ĐẠT (100%)
+KẾT LUẬN CỦA HỘI ĐỒNG NGHIỆM THU:
+1. Toàn bộ các hạng mục công việc Milestone 01 đã được Bên B triển khai đầy đủ, đúng tiến độ và đạt tất cả các yêu
+cầu kỹ thuật quy định trong Hợp đồng số 102/2026/HĐDV­AI.
+2. Bên A chính thức tiếp nhận hệ thống mã nguồn, bộ tài liệu và đồng ý thanh toán đợt 2 cho Bên B.
+Biên bản được lập thành 04 bản gốc có giá trị như nhau, mỗi bên giữ 02 bản để lưu trữ.
+ĐẠI DIỆN BÊN GIAO (BÊN B)
+(Ký và đóng dấu)
+ĐẠI DIỆN BÊN NHẬN (BÊN A)
+(Ký và đóng dấu)
+Lê Thị Mai
+Nguyễn Văn Nam
+ALPHA CORP
+ĐÃ DUYỆT

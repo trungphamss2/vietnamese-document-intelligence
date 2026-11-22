@@ -1,0 +1,58 @@
+{
+  "filename": "pdf_scan_01_hoa_don_vat.pdf",
+  "document_type": "invoice",
+  "invoice_number": "0004589",
+  "template_code": "01GTKT0/001",
+  "symbol": "AA/26E",
+  "date": "2026-11-16",
+  "seller": {
+    "name": "CÔNG TY CỔ PHẦN THƯƠNG MẠI & DỊCH VỤ SỐ VIỆT",
+    "tax_code": "0108998877",
+    "address": "Số 88 Phố Huế, Phường Hàng Bài, Quận Hoàn Kiếm, Hà Nội"
+  },
+  "buyer": {
+    "name": "CÔNG TY TNHH PHÁT TRIỂN CÔNG NGHỆ THĂNG LONG",
+    "tax_code": "0107776655",
+    "address": "Tầng 5, Tòa nhà Technosoft, Phố Duy Tân, Phường Dịch Vọng Hậu, Quận Cầu Giấy, Hà Nội"
+  },
+  "items": [
+    {
+      "stt": "1",
+      "name": "Máy chủ chuyên dụng AI Server H100 GPU",
+      "unit": "Bộ",
+      "qty": 1,
+      "unit_price": 750000000,
+      "total": 750000000
+    },
+    {
+      "stt": "2",
+      "name": "Thiết bị cân bằng tải mạng 10Gbps Enterprise",
+      "unit": "Chiếc",
+      "qty": 2,
+      "unit_price": 45000000,
+      "total": 90000000
+    },
+    {
+      "stt": "3",
+      "name": "Bản quyền phần mềm hệ điều hành máy chủ RedHat",
+      "unit": "License",
+      "qty": 5,
+      "unit_price": 12000000,
+      "total": 60000000
+    },
+    {
+      "stt": "4",
+      "name": "Gói dịch vụ hỗ trợ kỹ thuật và bảo trì hệ thống 12 tháng",
+      "unit": "Gói",
+      "qty": 1,
+      "unit_price": 50000000,
+      "total": 50000000
+    }
+  ],
+  "subtotal": 950000000,
+  "vat_rate": "10%",
+  "vat_amount": 95000000,
+  "total_amount": 1045000000,
+  "total_words": "Một tỷ không trăm bốn mươi lăm triệu đồng chẵn.",
+  "raw_ground_truth_text": "CÔNG TY CỔ PHẦN THƯƠNG MẠI & DỊCH VỤ SỐ VIỆT\nMã số thuế: 0108998877\nĐịa chỉ: Số 88 Phố Huế, Phường Hàng Bài, Quận Hoàn Kiếm, Hà Nội\nĐiện thoại: 024.3988.6666 | Số tài khoản: 1100223344 tại Vietcombank\nHÓA ĐƠN GIÁ TRỊ GIA TĂNG (VAT INVOICE)\n(BẢN THỂ HIỆN HÓA ĐƠN ĐIỆN TỬ DẠNG QUÉT SCAN)\nĐơn vị mua hàng: CÔNG TY TNHH PHÁT TRIỂN CÔNG NGHỆ THĂNG LONG\nMã số thuế: 0107776655\nĐịa chỉ: Tầng 5, Tòa nhà Technosoft, Phố Duy Tân, Phường Dịch Vọng Hậu, Quận Cầu Giấy, Hà Nội\nHình thức thanh toán: Chuyển khoản (TM/CK) | Đồng tiền thanh toán: VND\nSTT\nTên hàng hóa, dịch vụ\nĐVT\nSL\nĐơn giá\nThành tiền\n1\nMáy chủ chuyên dụng AI Server H100 GPU\nBộ\n1\n750.000.000\n750.000.000\n2\nThiết bị cân bằng tải mạng 10Gbps Enterprise\nChiếc\n2\n45.000.000\n90.000.000\n3\nBản quyền phần mềm hệ điều hành máy chủ RedHat\nLicense\n5\n12.000.000\n60.000.000\n4\nGói dịch vụ hỗ trợ kỹ thuật và bảo trì hệ thống 12 tháng\nGói\n1\n50.000.000\n50.000.000\nCộng tiền hàng (Total amount):\n950.000.000\nThuế suất GTGT (VAT rate): 10%  ­  Tiền thuế GTGT:\n95.000.000\nTỔNG CỘNG TIỀN THANH TOÁN (TOTAL PAYMENT):\n1.045.000.000\nSố tiền viết bằng chữ: Một tỷ không trăm bốn mươi lăm triệu đồng chẵn.\nNGƯỜI MUA HÀNG\n(Ký, ghi rõ họ tên)\nNGƯỜI BÁN HÀNG\n(Ký, đóng dấu, ghi rõ họ tên)\nTrần Quốc Cường\nVũ Hải Đăng\n(Đã ký điện tử hợp lệ)\nĐÃ KÝ\n2026­11­16"
+}

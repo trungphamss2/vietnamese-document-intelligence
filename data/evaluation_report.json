@@ -1,0 +1,226 @@
+{
+  "evaluation_timestamp": "2026-11-20 22:42:56",
+  "total_documents": 2,
+  "total_pages": 2,
+  "ocr_success_rate": 100.0,
+  "overall_cer_percent": 17.47,
+  "overall_wer_percent": 57.79,
+  "avg_latency_per_page_ms": 61367.03,
+  "total_processing_time_ms": 122734.06,
+  "detailed_results": [
+    {
+      "filename": "pdf_scan_01_hoa_don_vat.pdf",
+      "description": "Hóa đơn giá trị gia tăng (VAT Invoice scan dạng bảng biểu)",
+      "page_count": 1,
+      "latency_ms": 59418.22,
+      "latency_per_page_ms": 59418.22,
+      "cer_exact": 19.44,
+      "wer_exact": 64.94,
+      "cer_normalized_lower": 19.13,
+      "wer_normalized_lower": 64.94,
+      "avg_confidence": 0.9813,
+      "gt_char_count": 1281,
+      "gt_word_count": 251,
+      "ocr_char_count": 1265,
+      "ocr_word_count": 281,
+      "status": "PASS",
+      "segments": [
+        {
+          "segment_id": 1,
+          "layout_type": "paragraph",
+          "segment_type": "text",
+          "confidence": 0.9651,
+          "char_count": 190,
+          "has_table_data": false
+        },
+        {
+          "segment_id": 2,
+          "layout_type": "heading",
+          "segment_type": "text",
+          "confidence": 0.9667,
+          "char_count": 38,
+          "has_table_data": false
+        },
+        {
+          "segment_id": 3,
+          "layout_type": "paragraph",
+          "segment_type": "text",
+          "confidence": 0.96,
+          "char_count": 278,
+          "has_table_data": false
+        },
+        {
+          "segment_id": 4,
+          "layout_type": "table",
+          "segment_type": "table",
+          "confidence": 0.994,
+          "char_count": 551,
+          "has_table_data": true
+        },
+        {
+          "segment_id": 5,
+          "layout_type": "paragraph",
+          "segment_type": "text",
+          "confidence": 0.9669,
+          "char_count": 60,
+          "has_table_data": false
+        },
+        {
+          "segment_id": 6,
+          "layout_type": "table",
+          "segment_type": "table",
+          "confidence": 0.9685,
+          "char_count": 81,
+          "has_table_data": true
+        },
+        {
+          "segment_id": 7,
+          "layout_type": "heading",
+          "segment_type": "text",
+          "confidence": 0.9427,
+          "char_count": 4,
+          "has_table_data": false
+        },
+        {
+          "segment_id": 8,
+          "layout_type": "paragraph",
+          "segment_type": "text",
+          "confidence": 1.0,
+          "char_count": 10,
+          "has_table_data": false
+        },
+        {
+          "segment_id": 9,
+          "layout_type": "table",
+          "segment_type": "table",
+          "confidence": 0.9087,
+          "char_count": 26,
+          "has_table_data": true
+        },
+        {
+          "segment_id": 10,
+          "layout_type": "paragraph",
+          "segment_type": "text",
+          "confidence": 0.9382,
+          "char_count": 18,
+          "has_table_data": false
+        }
+      ]
+    },
+    {
+      "filename": "pdf_scan_02_bien_ban_nghiem_thu.pdf",
+      "description": "Biên bản nghiệm thu và bàn giao sản phẩm (Scan hành chính)",
+      "page_count": 1,
+      "latency_ms": 63315.84,
+      "latency_per_page_ms": 63315.84,
+      "cer_exact": 16.09,
+      "wer_exact": 53.2,
+      "cer_normalized_lower": 16.09,
+      "wer_normalized_lower": 53.2,
+      "avg_confidence": 0.9794,
+      "gt_char_count": 1821,
+      "gt_word_count": 391,
+      "ocr_char_count": 1698,
+      "ocr_word_count": 410,
+      "status": "PASS",
+      "segments": [
+        {
+          "segment_id": 1,
+          "layout_type": "heading",
+          "segment_type": "text",
+          "confidence": 0.9315,
+          "char_count": 34,
+          "has_table_data": false
+        },
+        {
+          "segment_id": 2,
+          "layout_type": "paragraph",
+          "segment_type": "text",
+          "confidence": 0.9827,
+          "char_count": 778,
+          "has_table_data": false
+        },
+        {
+          "segment_id": 3,
+          "layout_type": "table",
+          "segment_type": "table",
+          "confidence": 0.9858,
+          "char_count": 400,
+          "has_table_data": true
+        },
+        {
+          "segment_id": 4,
+          "layout_type": "heading",
+          "segment_type": "text",
+          "confidence": 0.9608,
+          "char_count": 31,
+          "has_table_data": false
+        },
+        {
+          "segment_id": 5,
+          "layout_type": "heading",
+          "segment_type": "text",
+          "confidence": 0.9809,
+          "char_count": 101,
+          "has_table_data": false
+        },
+        {
+          "segment_id": 6,
+          "layout_type": "paragraph",
+          "segment_type": "text",
+          "confidence": 0.978,
+          "char_count": 52,
+          "has_table_data": false
+        },
+        {
+          "segment_id": 7,
+          "layout_type": "heading",
+          "segment_type": "text",
+          "confidence": 0.9945,
+          "char_count": 89,
+          "has_table_data": false
+        },
+        {
+          "segment_id": 8,
+          "layout_type": "paragraph",
+          "segment_type": "text",
+          "confidence": 0.9818,
+          "char_count": 75,
+          "has_table_data": false
+        },
+        {
+          "segment_id": 9,
+          "layout_type": "table",
+          "segment_type": "table",
+          "confidence": 0.9818,
+          "char_count": 84,
+          "has_table_data": true
+        },
+        {
+          "segment_id": 10,
+          "layout_type": "heading",
+          "segment_type": "text",
+          "confidence": 0.9999,
+          "char_count": 10,
+          "has_table_data": false
+        },
+        {
+          "segment_id": 11,
+          "layout_type": "heading",
+          "segment_type": "text",
+          "confidence": 0.8611,
+          "char_count": 8,
+          "has_table_data": false
+        },
+        {
+          "segment_id": 12,
+          "layout_type": "table",
+          "segment_type": "table",
+          "confidence": 0.9469,
+          "char_count": 26,
+          "has_table_data": true
+        }
+      ]
+    }
+  ]
+}
