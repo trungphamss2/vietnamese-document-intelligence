@@ -1,0 +1,329 @@
+{
+  "summary": {
+    "total_queries": 8,
+    "top1_accuracy": 75.0,
+    "top3_accuracy": 100.0,
+    "avg_top1_score": 0.6183,
+    "avg_search_latency_ms": 56.73,
+    "embedding_model": "BAAI/bge-m3",
+    "vector_dimension": 1024,
+    "qdrant_collection": "vietnamese_documents"
+  },
+  "indexing_summary": {
+    "status": "pre_indexed_105_points"
+  },
+  "query_evaluations": [
+    {
+      "query_id": "Q01",
+      "query": "Điều khoản hiệu lực hợp đồng và bảo mật thông tin dịch vụ CNTT",
+      "category": "Legal/Contract",
+      "expected_domain": "hop_dong_dich_vu_cntt",
+      "top1_match": true,
+      "top3_match": true,
+      "top1_score": 0.6289,
+      "search_time_ms": 250.66,
+      "hits": [
+        {
+          "rank": 1,
+          "score": 0.6289,
+          "filename": "pdf_text_01_hop_dong_dich_vu_cntt.pdf",
+          "page": 3,
+          "content_type": "paragraph",
+          "text_snippet": "6.2 Không bên nào được phép cung cấp dữ liệu huấn luyện hoặc kết quả trích xuất cho bất kỳ bên thứ ba\nnào. ĐIỀU 7: HIỆU ...",
+          "is_expected_match": true
+        },
+        {
+          "rank": 2,
+          "score": 0.5979,
+          "filename": "pdf_complex_01_bang_gia_dich_vu_cloud.pdf",
+          "page": 2,
+          "content_type": "paragraph",
+          "text_snippet": "Điều khoản kỹ thuật và bảo mật:\n­ Tất cả dữ liệu tài liệu truyền tải qua API được mã hóa đầu cuối bằng chuẩn TLS 1.3. ­ ...",
+          "is_expected_match": false
+        },
+        {
+          "rank": 3,
+          "score": 0.5598,
+          "filename": "pdf_complex_01_bang_gia_dich_vu_cloud.pdf",
+          "page": 2,
+          "content_type": "paragraph",
+          "text_snippet": "CHÍNH SÁCH CHIẾT KHẤU VÀ ĐIỀU KHOẢN HỖ TRỢ KỸ THUẬT\n1. Chính sách ưu đãi cam kết dài hạn:\n­ Khách hàng ký hợp đồng 06 th...",
+          "is_expected_match": false
+        }
+      ]
+    },
+    {
+      "query_id": "Q02",
+      "query": "Tổng tiền thanh toán trên hoá đơn giá trị gia tăng VAT",
+      "category": "Finance/Invoice",
+      "expected_domain": "hoa_don_vat",
+      "top1_match": true,
+      "top3_match": true,
+      "top1_score": 0.6535,
+      "search_time_ms": 24.47,
+      "hits": [
+        {
+          "rank": 1,
+          "score": 0.6535,
+          "filename": "pdf_scan_01_hoa_don_vat.pdf",
+          "page": 1,
+          "content_type": "table",
+          "text_snippet": "Bảng (Dữ liệu):\n| STT | Tên hàng hóa, dich vu | DVT | SL | Đon giá | Thành tin |\n| --- | --- | --- | --- | --- | --- |\n|...",
+          "is_expected_match": true
+        },
+        {
+          "rank": 2,
+          "score": 0.5822,
+          "filename": "pdf_text_01_hop_dong_dich_vu_cntt.pdf",
+          "page": 2,
+          "content_type": "paragraph",
+          "text_snippet": "Giá đã bao gồm thuế\nGTGT 10%. 3.2 Lộ trình thanh toán được chia làm 03 đợt:\n­ Đợt 1: Tạm ứng 30% giá trị hợp đồng tương ...",
+          "is_expected_match": false
+        },
+        {
+          "rank": 3,
+          "score": 0.5762,
+          "filename": "pdf_text_01_hop_dong_dich_vu_cntt.pdf",
+          "page": 2,
+          "content_type": "paragraph",
+          "text_snippet": "­ Tài liệu DOCX: Bảo toàn thứ tự tuần tự giữa các đoạn văn bản (paragraphs) và cấu trúc bảng (tables). ­ Tài liệu XLSX: ...",
+          "is_expected_match": false
+        }
+      ]
+    },
+    {
+      "query_id": "Q03",
+      "query": "Quy chế làm việc và văn hóa ứng xử nội bộ doanh nghiệp",
+      "category": "Policy/HR",
+      "expected_domain": "quy_che_noi_bo",
+      "top1_match": true,
+      "top3_match": true,
+      "top1_score": 0.6034,
+      "search_time_ms": 21.95,
+      "hits": [
+        {
+          "rank": 1,
+          "score": 0.6034,
+          "filename": "docx_01_quy_che_noi_bo_doanh_nghiep.docx",
+          "page": null,
+          "content_type": "paragraph",
+          "text_snippet": "Điều 1. Phạm vi điều chỉnh và đối tượng áp dụng:\nQuy chế này quy định về thời giờ làm việc, thời giờ nghỉ ngơi, văn hóa ...",
+          "is_expected_match": true
+        },
+        {
+          "rank": 2,
+          "score": 0.5936,
+          "filename": "docx_01_quy_che_noi_bo_doanh_nghiep.docx",
+          "page": null,
+          "content_type": "paragraph",
+          "text_snippet": "CHƯƠNG I: QUY ĐỊNH CHUNG VỀ CHẾ ĐỘ LÀM VIỆC VÀ NỀ NẾP",
+          "is_expected_match": true
+        },
+        {
+          "rank": 3,
+          "score": 0.5539,
+          "filename": "docx_01_quy_che_noi_bo_doanh_nghiep.docx",
+          "page": null,
+          "content_type": "paragraph",
+          "text_snippet": "[TÀI LIỆU QUY CHẾ NỘI BỘ GIẢ LẬP PHỤC VỤ THỬ NGHIỆM HỆ THỐNG TRÍCH XUẤT VĂN BẢN]",
+          "is_expected_match": true
+        }
+      ]
+    },
+    {
+      "query_id": "Q04",
+      "query": "Báo cáo tài chính doanh thu thuần và lợi nhuận gộp sau thuế",
+      "category": "Finance/Accounting",
+      "expected_domain": "bao_cao_tai_chinh",
+      "top1_match": false,
+      "top3_match": true,
+      "top1_score": 0.571,
+      "search_time_ms": 32.84,
+      "hits": [
+        {
+          "rank": 1,
+          "score": 0.571,
+          "filename": "pdf_scan_01_hoa_don_vat.pdf",
+          "page": 1,
+          "content_type": "table",
+          "text_snippet": "Bảng (Dữ liệu):\n| STT | Tên hàng hóa, dich vu | DVT | SL | Đon giá | Thành tin |\n| --- | --- | --- | --- | --- | --- |\n|...",
+          "is_expected_match": false
+        },
+        {
+          "rank": 2,
+          "score": 0.5692,
+          "filename": "pdf_text_02_bao_cao_tai_chinh_quy.pdf",
+          "page": 2,
+          "content_type": "paragraph",
+          "text_snippet": "II. KẾT QUẢ TÀI CHÍNH TỔNG HỢP QUÝ 3 NĂM 2026\nĐơn vị tính: Triệu Việt Nam Đồng (VND)\nBảng 1 dưới đây tổng hợp các chỉ số...",
+          "is_expected_match": true
+        },
+        {
+          "rank": 3,
+          "score": 0.538,
+          "filename": "pdf_text_02_bao_cao_tai_chinh_quy.pdf",
+          "page": 2,
+          "content_type": "paragraph",
+          "text_snippet": "Giá vốn hàng bán (COGS)\n23.800\n29.970\n+ 25.9%\n3. Lợi nhuận gộp\n18.700\n28.230\n+ 51.0%\n4. Chi phí nghiên cứu & phát triển ...",
+          "is_expected_match": true
+        }
+      ]
+    },
+    {
+      "query_id": "Q05",
+      "query": "Biên bản nghiệm thu và bàn giao sản phẩm nền tảng Document Intelligence",
+      "category": "Operations/Quality",
+      "expected_domain": "bien_ban_nghiem_thu",
+      "top1_match": true,
+      "top3_match": true,
+      "top1_score": 0.6336,
+      "search_time_ms": 29.8,
+      "hits": [
+        {
+          "rank": 1,
+          "score": 0.6336,
+          "filename": "pdf_scan_02_bien_ban_nghiem_thu.pdf",
+          "page": 1,
+          "content_type": "paragraph",
+          "text_snippet": "BIÊN BÁN NGHIÊM THU VÀ BÀN GIAO SÁN PHÂM\nD án: Nn tng Document Intelligence & Pipeline Trích xut D liu\n- Căn c Hp đồng d...",
+          "is_expected_match": true
+        },
+        {
+          "rank": 2,
+          "score": 0.5952,
+          "filename": "pdf_text_01_hop_dong_dich_vu_cntt.pdf",
+          "page": 1,
+          "content_type": "paragraph",
+          "text_snippet": "và triển khai nền tảng Document Intelligence & RAG tiếng Việt nhằm tự động hóa việc đọc, phân loại, bóc tách dữ liệu từ ...",
+          "is_expected_match": false
+        },
+        {
+          "rank": 3,
+          "score": 0.5949,
+          "filename": "docx_02_de_xuat_du_an_rag.docx",
+          "page": null,
+          "content_type": "paragraph",
+          "text_snippet": "BẢN ĐỀ XUẤT DỰ ÁN: NỀN TẢNG DOCUMENT INTELLIGENCE & RAG TIẾNG VIỆT",
+          "is_expected_match": false
+        }
+      ]
+    },
+    {
+      "query_id": "Q06",
+      "query": "Bảng báo giá dịch vụ hạ tầng đám mây Cloud Server và hạn mức API",
+      "category": "Cloud/Pricing",
+      "expected_domain": "bang_gia_dich_vu_cloud",
+      "top1_match": true,
+      "top3_match": true,
+      "top1_score": 0.644,
+      "search_time_ms": 54.29,
+      "hits": [
+        {
+          "rank": 1,
+          "score": 0.644,
+          "filename": "pdf_complex_01_bang_gia_dich_vu_cloud.pdf",
+          "page": 1,
+          "content_type": "paragraph",
+          "text_snippet": "Hạn mức trích xuất API 10.000 trang/tháng 100.000 trang/tháng Không giới hạn Hỗ trợ OCR tài liệu scan Tối đa 500 trang/t...",
+          "is_expected_match": true
+        },
+        {
+          "rank": 2,
+          "score": 0.5904,
+          "filename": "pdf_complex_01_bang_gia_dich_vu_cloud.pdf",
+          "page": 1,
+          "content_type": "paragraph",
+          "text_snippet": "CÔNG TY CỔ PHẦN ĐIỆN TOÁN ĐÁM MÂY & AI VIỆT NAM\nBẢNG BÁO GIÁ DỊCH VỤ HẠ TẦNG VÀ NỀN TẢNG RAG NĂM 2026\n[BẢNG GIÁ DỊCH VỤ ...",
+          "is_expected_match": true
+        },
+        {
+          "rank": 3,
+          "score": 0.5886,
+          "filename": "docx_02_de_xuat_du_an_rag.docx",
+          "page": null,
+          "content_type": "paragraph",
+          "text_snippet": "Bảng 2 ước tính chi phí đầu tư hạ tầng phần cứng và dịch vụ điện toán đám mây cho giai đoạn thử nghiệm (PoC) và vận hành...",
+          "is_expected_match": false
+        }
+      ]
+    },
+    {
+      "query_id": "Q07",
+      "query": "Đề xuất dự án phát triển hệ thống RAG và kiến trúc kỹ thuật AI",
+      "category": "AI Proposal",
+      "expected_domain": "de_xuat_du_an_rag",
+      "top1_match": true,
+      "top3_match": true,
+      "top1_score": 0.6353,
+      "search_time_ms": 19.87,
+      "hits": [
+        {
+          "rank": 1,
+          "score": 0.6353,
+          "filename": "docx_02_de_xuat_du_an_rag.docx",
+          "page": null,
+          "content_type": "paragraph",
+          "text_snippet": "BẢN ĐỀ XUẤT DỰ ÁN: NỀN TẢNG DOCUMENT INTELLIGENCE & RAG TIẾNG VIỆT",
+          "is_expected_match": true
+        },
+        {
+          "rank": 2,
+          "score": 0.5647,
+          "filename": "pdf_text_02_bao_cao_tai_chinh_quy.pdf",
+          "page": 1,
+          "content_type": "paragraph",
+          "text_snippet": "THƯ NGỎ CỦA BAN TỔNG GIÁM ĐỐC\nKính gửi Quý Cổ đông, Đối tác và toàn thể Cán bộ Nhân viên,\nQuý 3 năm 2026 ghi nhận bước c...",
+          "is_expected_match": false
+        },
+        {
+          "rank": 3,
+          "score": 0.5637,
+          "filename": "pdf_text_01_hop_dong_dich_vu_cntt.pdf",
+          "page": 1,
+          "content_type": "paragraph",
+          "text_snippet": "và triển khai nền tảng Document Intelligence & RAG tiếng Việt nhằm tự động hóa việc đọc, phân loại, bóc tách dữ liệu từ ...",
+          "is_expected_match": false
+        }
+      ]
+    },
+    {
+      "query_id": "Q08",
+      "query": "Dự toán ngân sách và bảng kế hoạch chi phí hoạt động các phòng ban năm 2026",
+      "category": "Budget/Planning",
+      "expected_domain": "ke_hoach_ngan_sach",
+      "top1_match": false,
+      "top3_match": true,
+      "top1_score": 0.5769,
+      "search_time_ms": 19.94,
+      "hits": [
+        {
+          "rank": 1,
+          "score": 0.5769,
+          "filename": "docx_02_de_xuat_du_an_rag.docx",
+          "page": null,
+          "content_type": "paragraph",
+          "text_snippet": "3. DỰ TOÁN NGÂN SÁCH VÀ HẠ TẦNG KỸ THUẬT",
+          "is_expected_match": false
+        },
+        {
+          "rank": 2,
+          "score": 0.5469,
+          "filename": "pdf_text_02_bao_cao_tai_chinh_quy.pdf",
+          "page": 2,
+          "content_type": "paragraph",
+          "text_snippet": "II. KẾT QUẢ TÀI CHÍNH TỔNG HỢP QUÝ 3 NĂM 2026\nĐơn vị tính: Triệu Việt Nam Đồng (VND)\nBảng 1 dưới đây tổng hợp các chỉ số...",
+          "is_expected_match": false
+        },
+        {
+          "rank": 3,
+          "score": 0.5468,
+          "filename": "xlsx_01_ke_hoach_ngan_sach_2026.xlsx",
+          "page": null,
+          "content_type": "table",
+          "text_snippet": "Bảng (TongQuanNganSach):\n| Mã dự án | Tên dự án AI | Khối phụ trách | Ngày phê duyệt | Ngân sách duyệt (VND) | Đã giải n...",
+          "is_expected_match": true
+        }
+      ]
+    }
+  ]
+}

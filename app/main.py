@@ -3,7 +3,7 @@
 from fastapi import FastAPI, status
 from fastapi.middleware.cors import CORSMiddleware
 
-from app.api.routes import documents
+from app.api.routes import documents, indexing
 from app.core.config import settings
 from app.schemas.document import HealthResponse
 
@@ -27,6 +27,8 @@ app.add_middleware(
 
 # Register API routes
 app.include_router(documents.router)
+app.include_router(indexing.router)
+
 
 
 @app.get(

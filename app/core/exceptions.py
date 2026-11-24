@@ -43,3 +43,22 @@ class OCREngineError(DocumentParserException):
     """Raised when OCR processing fails."""
 
     pass
+
+
+class EmbeddingEngineError(DocumentParserException):
+    """Raised when text embedding fails."""
+
+    pass
+
+
+class VectorStoreError(DocumentParserException):
+    """Raised when vector store operations fail."""
+
+    pass
+
+
+class ChunkingError(DocumentParserException):
+    """Raised when text chunking fails."""
+
+    pass
+

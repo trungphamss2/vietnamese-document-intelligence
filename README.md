@@ -1,7 +1,9 @@
 # Vietnamese Document Intelligence & RAG Platform
 
 > **Milestone 01**: Document Processing Pipeline & REST API (Completed)  
-> **Milestone 02**: Vietnamese OCR & Layout Processing (Completed)
+> **Milestone 02**: Vietnamese OCR & Layout Processing (Completed)  
+> **Milestone 03**: Intelligent Text Chunking, BGE-M3 Embedding & Qdrant Vector Database (Completed)
+
 
 Platform xử lý, trích xuất cấu trúc và phân tích tài liệu tiếng Việt đa định dạng (PDF, DOCX, XLSX, Scanned PDF), cung cấp REST API hiệu năng cao xây dựng trên FastAPI, phục vụ cho các hệ thống RAG (Retrieval-Augmented Generation) và Document Intelligence.
 

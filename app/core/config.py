@@ -1,6 +1,7 @@
 """Application configuration module using Pydantic Settings."""
 
-from typing import Set
+from typing import Optional, Set
+
 from pydantic_settings import BaseSettings, SettingsConfigDict
 
 
@@ -32,6 +33,33 @@ class Settings(BaseSettings):
     OCR_CONFIDENCE_THRESHOLD: float = 0.5
     PADDLE_CACHE_DIR: str = "D:/rag/vietnamese-document-intelligence/.cache/paddlex"
     PADDLE_HOME_DIR: str = "D:/rag/vietnamese-document-intelligence/.cache/paddle"
+
+    # Text Chunking Configuration (Milestone 03)
+    CHUNK_SIZE: int = 512
+    CHUNK_OVERLAP: int = 64
+    MIN_CHUNK_SIZE: int = 30
+    CHUNK_MAX_TOKENS: int = 512
+
+    # Embedding Configuration (Milestone 03)
+    EMBEDDING_MODEL: str = "BAAI/bge-m3"
+    EMBEDDING_DEVICE: str = "auto"  # "cuda", "cpu", or "auto"
+    EMBEDDING_BATCH_SIZE: int = 4  # Optimized for RTX 3050 6GB
+    EMBEDDING_MAX_SEQ_LENGTH: int = 512
+    EMBEDDING_DIM: int = 1024
+    EMBEDDING_USE_FP16: bool = True
+    HF_CACHE_DIR: str = "D:/rag/vietnamese-document-intelligence/.cache/hf"
+    LOCAL_SNAPSHOT_PATH: Optional[str] = (
+        "C:/Users/trung/.cache/huggingface/hub/models--BAAI--bge-m3/snapshots/5617a9f61b028005a4858fdac845db406aefb181"
+    )
+
+
+    # Qdrant Vector Database Configuration (Milestone 03)
+    QDRANT_HOST: str = "localhost"
+    QDRANT_PORT: int = 6333
+    QDRANT_GRPC_PORT: int = 6334
+    QDRANT_COLLECTION: str = "vietnamese_documents"
+    QDRANT_STORAGE_DIR: str = "D:/rag/qdrant_storage"
+
 
     model_config = SettingsConfigDict(
         env_file=".env",
