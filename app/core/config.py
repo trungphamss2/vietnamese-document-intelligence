@@ -60,6 +60,25 @@ class Settings(BaseSettings):
     QDRANT_COLLECTION: str = "vietnamese_documents"
     QDRANT_STORAGE_DIR: str = "D:/rag/qdrant_storage"
 
+    # BM25 Sparse Retrieval Configuration (Milestone 04)
+    BM25_STORAGE_PATH: str = "data/bm25_index.json"
+    BM25_K1: float = 1.5
+    BM25_B: float = 0.75
+
+    # Hybrid Search & Reciprocal Rank Fusion (RRF) Configuration (Milestone 04)
+    RRF_K: int = 60
+    RRF_WEIGHT_DENSE: float = 1.0
+    RRF_WEIGHT_SPARSE: float = 1.0
+    HYBRID_CANDIDATE_LIMIT: int = 20
+
+    # Cross-Encoder Reranker Configuration (Milestone 04)
+    RERANKER_MODEL: str = "BAAI/bge-reranker-v2-m3"
+    RERANKER_DEVICE: str = "auto"  # "cuda", "cpu", or "auto"
+    RERANKER_BATCH_SIZE: int = 8  # Optimized for 6GB VRAM
+    RERANKER_MAX_LENGTH: int = 512
+    RERANKER_USE_FP16: bool = True
+    RERANKER_SNAPSHOT_PATH: Optional[str] = None
+
 
     model_config = SettingsConfigDict(
         env_file=".env",

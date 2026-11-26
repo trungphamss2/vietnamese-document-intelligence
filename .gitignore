@@ -54,6 +54,8 @@ htmlcov/
 # Processed outputs and cache
 data/processed/*
 !data/processed/.gitkeep
+data/bm25_index.json
+data/*.tmp
 .cache/
 qdrant_storage/
 

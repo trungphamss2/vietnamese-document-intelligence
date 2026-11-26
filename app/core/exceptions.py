@@ -62,3 +62,21 @@ class ChunkingError(DocumentParserException):
 
     pass
 
+
+class BM25Error(DocumentParserException):
+    """Raised when BM25 indexing or retrieval fails."""
+
+    pass
+
+
+class RerankerError(DocumentParserException):
+    """Raised when Cross-Encoder reranking fails."""
+
+    pass
+
+
+class HybridSearchError(DocumentParserException):
+    """Raised when hybrid search fusion or retrieval fails."""
+
+    pass
+

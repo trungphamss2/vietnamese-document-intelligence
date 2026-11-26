@@ -94,3 +94,57 @@ class DeleteDocumentResponse(BaseModel):
     document_id: str = Field(..., description="ID of deleted document")
     status: str = Field(..., description="Deletion result status")
     deleted_points: int = Field(..., description="Number of vectors/points deleted")
+
+
+class HybridSearchRequest(BaseModel):
+    """Request model for hybrid retrieval (Dense + BM25 + Cross-Encoder)."""
+
+    query: str = Field(..., description="Natural language search query", min_length=1)
+    top_k: int = Field(default=5, description="Final number of ranked results to return", ge=1, le=100)
+    candidate_limit: int = Field(
+        default=20,
+        description="Number of candidates retrieved from dense and sparse before fusion/reranking",
+        ge=2,
+        le=200,
+    )
+    document_id: Optional[str] = Field(default=None, description="Optional document_id filter")
+    enable_reranking: bool = Field(default=True, description="Enable Cross-Encoder reranking")
+    rrf_k: Optional[int] = Field(default=60, description="Reciprocal Rank Fusion constant k", ge=1, le=200)
+    dense_weight: Optional[float] = Field(default=1.0, description="Weight for Dense retrieval in RRF", ge=0.0)
+    sparse_weight: Optional[float] = Field(default=1.0, description="Weight for Sparse (BM25) retrieval in RRF", ge=0.0)
+    score_threshold: Optional[float] = Field(
+        default=None,
+        description="Minimum score threshold for final results",
+    )
+
+
+class HybridSearchResultItem(BaseModel):
+    """Represents a single retrieved chunk in hybrid search results."""
+
+    chunk_id: str = Field(..., description="Unique chunk ID")
+    document_id: str = Field(..., description="Parent document ID")
+    filename: str = Field(..., description="Source document filename")
+    page: Optional[int] = Field(default=None, description="Page number")
+    content_type: str = Field(..., description="Type of chunk (paragraph, heading, table, etc.)")
+    text: str = Field(..., description="Chunk content text")
+    score: float = Field(..., description="Final relevance score (Cross-Encoder score or RRF score)")
+    rrf_score: float = Field(..., description="Reciprocal Rank Fusion score")
+    dense_rank: Optional[int] = Field(default=None, description="Rank in Dense retrieval results (1-based)")
+    dense_score: Optional[float] = Field(default=None, description="Raw Cosine similarity score from Dense retrieval")
+    sparse_rank: Optional[int] = Field(default=None, description="Rank in BM25 retrieval results (1-based)")
+    sparse_score: Optional[float] = Field(default=None, description="Raw BM25 score from Sparse retrieval")
+    rerank_score: Optional[float] = Field(default=None, description="Cross-Encoder relevance logit/probability")
+    metadata: Dict[str, Any] = Field(default_factory=dict, description="Metadata dictionary")
+
+
+class HybridSearchResponse(BaseModel):
+    """Response model for hybrid retrieval."""
+
+    query: str = Field(..., description="Executed search query")
+    total_results: int = Field(..., description="Number of results returned")
+    results: List[HybridSearchResultItem] = Field(default_factory=list, description="Ranked hybrid results")
+    dense_candidates_count: int = Field(..., description="Number of dense candidates retrieved")
+    sparse_candidates_count: int = Field(..., description="Number of sparse (BM25) candidates retrieved")
+    fused_candidates_count: int = Field(..., description="Number of unique candidates fused via RRF")
+    rerank_applied: bool = Field(..., description="Whether Cross-Encoder reranking was applied")
+    search_time_ms: float = Field(..., description="Total search latency in milliseconds")

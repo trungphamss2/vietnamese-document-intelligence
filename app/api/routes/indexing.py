@@ -6,23 +6,30 @@ from fastapi import APIRouter, Depends, File, Form, HTTPException, Query, Upload
 
 from app.core.config import settings
 from app.core.exceptions import (
+    BM25Error,
     CorruptedDocumentError,
     DocumentParserException,
     EmptyFileError,
     EncryptedDocumentError,
     FileSizeExceededError,
+    HybridSearchError,
     OCREngineError,
+    RerankerError,
     UnsupportedFileTypeError,
 )
 from app.schemas.chunk import (
     ChunkingConfig,
     DeleteDocumentResponse,
+    HybridSearchRequest,
+    HybridSearchResponse,
     IndexResponse,
     SearchRequest,
     SearchResponse,
 )
+from app.services.bm25_service import BM25Service, get_bm25_service
 from app.services.document_parser import DocumentParser
 from app.services.embedding_service import EmbeddingService, get_embedding_service
+from app.services.hybrid_search_service import HybridSearchService, get_hybrid_search_service
 from app.services.text_chunker import IntelligentTextChunker
 from app.services.vector_store import QdrantVectorStore, get_vector_store
 
@@ -67,6 +74,7 @@ async def index_document(
     parser: DocumentParser = Depends(get_document_parser),
     embedder: EmbeddingService = Depends(get_embedding_service),
     vector_store: QdrantVectorStore = Depends(get_vector_store),
+    bm25_service: BM25Service = Depends(get_bm25_service),
 ) -> IndexResponse:
     """Parse, chunk, embed and index an uploaded document."""
     start_time = time.perf_counter()
@@ -129,7 +137,9 @@ async def index_document(
     chunks = chunker.chunk_document(document=parsed_doc, document_id=doc_id)
 
     if not chunks:
-        # Edge case: empty document text
+        # Edge case: empty document text — ensure any stale BM25/Qdrant entries are cleaned
+        vector_store.delete_by_document_id(doc_id)
+        bm25_service.delete_by_document_id(doc_id)
         duration_ms = (time.perf_counter() - start_time) * 1000
         return IndexResponse(
             document_id=doc_id,
@@ -146,8 +156,9 @@ async def index_document(
     texts = [c.text for c in chunks]
     vectors = embedder.embed_texts(texts=texts)
 
-    # 5. Qdrant upsert (with automatic deduplication/purging of prior document_id points)
+    # 5. Qdrant upsert + BM25 synchronized indexing (with deduplication on document_id)
     vector_store.upsert_chunks(chunks=chunks, vectors=vectors, document_id=doc_id)
+    bm25_service.index_chunks(chunks=chunks, document_id=doc_id)
 
     duration_ms = (time.perf_counter() - start_time) * 1000
     return IndexResponse(
@@ -200,27 +211,60 @@ async def search_vector(
     )
 
 
+@router.post(
+    "/search/hybrid",
+    response_model=HybridSearchResponse,
+    status_code=status.HTTP_200_OK,
+    summary="Perform hybrid search (Dense + BM25 + RRF + Cross-Encoder Reranking)",
+    description=(
+        "Combines BGE-M3 dense vector search from Qdrant and BM25 sparse keyword search "
+        "via Reciprocal Rank Fusion (RRF), optionally reranking candidates with BAAI/bge-reranker-v2-m3."
+    ),
+)
+async def search_hybrid(
+    request: HybridSearchRequest,
+    hybrid_service: HybridSearchService = Depends(get_hybrid_search_service),
+) -> HybridSearchResponse:
+    """Execute hybrid retrieval pipeline."""
+    if not request.query or not request.query.strip():
+        raise HTTPException(
+            status_code=status.HTTP_400_BAD_REQUEST,
+            detail="Query cannot be empty or blank.",
+        )
+
+    try:
+        return hybrid_service.search_hybrid(request)
+    except (HybridSearchError, BM25Error, RerankerError) as exc:
+        raise HTTPException(
+            status_code=status.HTTP_500_INTERNAL_SERVER_ERROR,
+            detail=exc.message,
+        )
+
+
 @router.delete(
     "/documents/{document_id}",
     response_model=DeleteDocumentResponse,
     status_code=status.HTTP_200_OK,
     summary="Delete all indexed vectors and metadata for a document",
-    description="Removes all points associated with the specified document_id from Qdrant.",
+    description="Removes all points associated with the specified document_id from Qdrant and BM25 index.",
 )
 async def delete_document(
     document_id: str,
     vector_store: QdrantVectorStore = Depends(get_vector_store),
+    bm25_service: BM25Service = Depends(get_bm25_service),
 ) -> DeleteDocumentResponse:
-    """Delete document points from Qdrant."""
+    """Delete document points from Qdrant and BM25 index."""
     if not document_id or not document_id.strip():
         raise HTTPException(
             status_code=status.HTTP_400_BAD_REQUEST,
             detail="document_id cannot be empty.",
         )
 
-    count = vector_store.delete_by_document_id(document_id.strip())
+    clean_id = document_id.strip()
+    qdrant_count = vector_store.delete_by_document_id(clean_id)
+    bm25_count = bm25_service.delete_by_document_id(clean_id)
     return DeleteDocumentResponse(
-        document_id=document_id.strip(),
+        document_id=clean_id,
         status="deleted",
-        deleted_points=count,
+        deleted_points=max(qdrant_count, bm25_count),
     )
